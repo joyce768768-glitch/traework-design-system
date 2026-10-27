@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraeWork — UI Kit &amp; Components</title>
+    <meta name="description" content="Navigation hub for all TraeWork UI kit showcases and component preview pages.">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="colors_and_type.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+      * { box-sizing: border-box; }
+
+      html {
+        background: var(--bg-base-default);
+        color: var(--text-default);
+        font-family: var(--font-family-default);
+        font-size: var(--body-base-font-size);
+        line-height: var(--body-base-line-height);
+        font-weight: var(--body-base-font-weight);
+        letter-spacing: var(--body-base-letter-spacing);
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background: var(--bg-base-default);
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      :focus-visible {
+        outline: 2px solid var(--border-brand);
+        outline-offset: var(--spacer-2);
+      }
+
+      .hub {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: var(--spacer-32) var(--spacer-16) var(--spacer-48);
+      }
+
+      .hub__title {
+        font-family: var(--font-family-metric);
+        font-size: var(--heading-lg-font-size);
+        line-height: var(--heading-lg-line-height);
+        font-weight: var(--heading-lg-font-weight);
+        letter-spacing: var(--heading-lg-letter-spacing);
+        margin: 0 0 var(--spacer-8);
+      }
+
+      .hub__subtitle {
+        color: var(--text-secondary);
+        margin: 0 0 var(--spacer-32);
+        max-width: 640px;
+      }
+
+      .hub__section {
+        margin: 0 0 var(--spacer-32);
+      }
+
+      .hub__section-title {
+        display: flex;
+        align-items: baseline;
+        gap: var(--spacer-8);
+        margin: 0 0 var(--spacer-16);
+        font-size: var(--heading-sm-font-size);
+        line-height: var(--heading-sm-line-height);
+        font-weight: var(--heading-sm-font-weight);
+      }
+
+      .hub__section-count {
+        color: var(--text-tertiary);
+        font-size: var(--body-base-font-size);
+        font-weight: var(--font-weight-regular);
+      }
+
+      .hub__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: var(--spacer-12);
+      }
+
+      .hub-card {
+        background: var(--bg-base-secondary);
+        border: 1px solid var(--border-neutral-l1);
+        border-radius: var(--radius-12);
+        padding: var(--spacer-16);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacer-8);
+        transition: border-color 120ms ease, background 120ms ease;
+      }
+
+      .hub-card:hover {
+        border-color: var(--border-neutral-l2);
+        background: var(--bg-overlay-l1);
+      }
+
+      .hub-card:active {
+        background: var(--bg-overlay-l2);
+      }
+
+      .hub-card__name {
+        font-weight: var(--font-weight-medium);
+        color: var(--text-default);
+        word-break: break-word;
+      }
+
+      .hub-card__desc {
+        color: var(--text-secondary);
+        margin: 0;
+        flex: 1;
+      }
+
+      .hub-card__path {
+        color: var(--text-tertiary);
+        font-family: var(--code-editor-font-family);
+        font-size: var(--body-sm-font-size);
+        line-height: var(--body-sm-line-height);
+        word-break: break-all;
+      }
+
+      @media (max-width: 720px) {
+        .hub { padding: var(--spacer-16) var(--spacer-16) var(--spacer-32); }
+        .hub__grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hub">
+      <h1 class="hub__title">TraeWork Design System</h1>
+      <p class="hub__subtitle">
+        Navigation hub for all UI kit showcases and component preview pages. Each page opens in a new tab so you can return here to jump anywhere.
+      </p>
+
+      <section class="hub__section">
+        <h2 class="hub__section-title">
+          UI Kits
+          <span class="hub__section-count">10 pages</span>
+        </h2>
+        <div class="hub__grid">
+          <a class="hub-card" href="ui_kits/dashboard/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Dashboard</span>
+            <p class="hub-card__desc">Mosaic-style dashboard case with KPIs, cards, and progress.</p>
+            <span class="hub-card__path">ui_kits/dashboard/index.html</span>
+          </a>
+          <a class="hub-card" href="ui_kits/dashboard-2/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Dashboard 2</span>
+            <p class="hub-card__desc">Adminator-style dashboard with welcome panel and metrics.</p>
+            <span class="hub-card__path">ui_kits/dashboard-2/index.html</span>
+          </a>
+          <a class="hub-card" href="ui_kits/dev-explorer/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Dev Explorer</span>
+            <p class="hub-card__desc">Developer workspace shell with menus, tables, and overlays.</p>
+            <span class="hub-card__path">ui_kits/dev-explorer/index.html</span>
+          </a>
+          <a class="hub-card" href="ui_kits/landing/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Landing</span>
+            <p class="hub-card__desc">TraeWork for Teams marketing landing page.</p>
+            <span class="hub-card__path">ui_kits/landing/index.html</span>
+          </a>
+          <a class="hub-card" href="ui_kits/settings/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Settings</span>
+            <p class="hub-card__desc">Agent settings screen with forms and alerts.</p>
+            <span class="hub-card__path">ui_kits/settings/index.html</span>
+          </a>
+          <a class="hub-card" href="ui_kits/pricing-doc/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Pricing Doc</span>
+            <p class="hub-card__desc">Pricing documentation page with cards and buttons.</p>
+            <span class="hub-card__path">ui_kits/pricing-doc/index.html</span>
+          </a>
+          <a class="hub-card" href="ui_kits/skills-library/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Skills Library</span>
+            <p class="hub-card__desc">Skills library overview with tag and form elements.</p>
+            <span class="hub-card__path">ui_kits/skills-library/index.html</span>
+          </a>
+          <a class="hub-card" href="ui_kits/product-overview/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Product Overview</span>
+            <p class="hub-card__desc">TraeWork product overview with hero and feature cards.</p>
+            <span class="hub-card__path">ui_kits/product-overview/index.html</span>
+          </a>
+          <a class="hub-card" href="ui_kits/comment-threads-plan/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Comment Threads Plan</span>
+            <p class="hub-card__desc">Implementation plan for comment threads on task cards.</p>
+            <span class="hub-card__path">ui_kits/comment-threads-plan/index.html</span>
+          </a>
+          <a class="hub-card" href="ui_kits/html-effectiveness-doc/index.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">HTML Effectiveness Doc</span>
+            <p class="hub-card__desc">Documentation showing the effectiveness of semantic HTML.</p>
+            <span class="hub-card__path">ui_kits/html-effectiveness-doc/index.html</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="hub__section">
+        <h2 class="hub__section-title">
+          Component Previews
+          <span class="hub__section-count">14 pages</span>
+        </h2>
+        <div class="hub__grid">
+          <a class="hub-card" href="preview/component-alert.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Alert</span>
+            <p class="hub-card__desc">Notifications with status surfaces and icons.</p>
+            <span class="hub-card__path">preview/component-alert.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-avatar.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Avatar</span>
+            <p class="hub-card__desc">Avatar sizes, initials, and status.</p>
+            <span class="hub-card__path">preview/component-avatar.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-breadcrumb.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Breadcrumb</span>
+            <p class="hub-card__desc">Hierarchical breadcrumb navigation.</p>
+            <span class="hub-card__path">preview/component-breadcrumb.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-buttons.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Buttons</span>
+            <p class="hub-card__desc">Button variants, sizes, groups, and states.</p>
+            <span class="hub-card__path">preview/component-buttons.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-cards.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Cards &amp; List</span>
+            <p class="hub-card__desc">Card surfaces, titles, and list compositions.</p>
+            <span class="hub-card__path">preview/component-cards.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-dialog.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Dialog</span>
+            <p class="hub-card__desc">Dialog / modal overlays with footer actions.</p>
+            <span class="hub-card__path">preview/component-dialog.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-forms.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Forms</span>
+            <p class="hub-card__desc">Inputs, selects, checkboxes, radios, switches.</p>
+            <span class="hub-card__path">preview/component-forms.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-menu.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Menu</span>
+            <p class="hub-card__desc">Dropdown menus with items, separators, and shortcuts.</p>
+            <span class="hub-card__path">preview/component-menu.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-pagination.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Pagination</span>
+            <p class="hub-card__desc">Pagination controls with page states.</p>
+            <span class="hub-card__path">preview/component-pagination.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-progress.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Progress / Slider</span>
+            <p class="hub-card__desc">Progress bars and slider controls.</p>
+            <span class="hub-card__path">preview/component-progress.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-skeleton.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Skeleton</span>
+            <p class="hub-card__desc">Skeleton loading placeholders.</p>
+            <span class="hub-card__path">preview/component-skeleton.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-table.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Table</span>
+            <p class="hub-card__desc">Data tables with dividers and status tags.</p>
+            <span class="hub-card__path">preview/component-table.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-tabs.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Tabs</span>
+            <p class="hub-card__desc">Tab navigation with selected states.</p>
+            <span class="hub-card__path">preview/component-tabs.html</span>
+          </a>
+          <a class="hub-card" href="preview/component-tag.html" target="_blank" rel="noopener">
+            <span class="hub-card__name">Tag</span>
+            <p class="hub-card__desc">Tag and chip variants.</p>
+            <span class="hub-card__path">preview/component-tag.html</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
